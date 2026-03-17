@@ -1,0 +1,31 @@
+#link-top {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0.5rem;  
+    right: 0.5rem;   
+    opacity: 0.5;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0;
+    border: 0.27rem solid grey; 
+    border-radius: 50%;
+    background: rgb(201, 187, 127);
+    box-shadow: 0 0 0.83rem rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.4s ease, opacity 0.4s ease;
+    text-decoration: none;
+    z-index: 1000; 
+}
+
+#link-top:hover {
+    opacity: 1;
+    background-color: rgb(180, 180, 180);
+}
+
+#triunghi {
+    color: rgba(0, 0, 0, 0.3);
+    margin: 0;
+    font-size: 2.5rem;   
+    line-height: 1.1;     
+    background: transparent;
+}

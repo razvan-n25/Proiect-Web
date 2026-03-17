@@ -1,0 +1,267 @@
+html {
+    height: 100%;
+    font-size: 18px; 
+    transition: font-size 0.3s ease;
+}
+
+body {
+    --culoare-fundal-ecran: rgb(167, 164, 164);
+    --culoare-fundal-sectiuni: #969694;
+    --culoare-umbre: rgba(26, 24, 24, 0.2);
+    --umbre-iframe: rgb(224, 211, 176);
+    --c1: #ecc949;
+    --c2: #7e5916;
+    --culoare-outline: rgba(10, 10, 10, 0.7);
+    --margine-main: 6.66rem; 
+    
+    background-color: var(--culoare-fundal-ecran);
+    margin: 0.3rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5; 
+}
+
+main {
+    margin-left: var(--margine-main);
+    margin-right: var(--margine-main);
+}
+
+#grid-pagina {
+    display: grid;
+    gap: 1.11rem; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "prezentare prezentare prezentare prezentare"
+        "tarife     tarife     creativ    creativ"
+        "evenimente utilizatori creativ    creativ"
+        "online     utilizatori creativ    creativ"
+        "online     anunturi   anunturi   server";
+}
+
+.hero-image {
+    text-align: center;
+}
+
+p { font-size: 1rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.5rem; font-weight: bold; }
+h2 { font-size: 2rem; font-weight: bold; }
+
+#prezentare { grid-area: prezentare; }
+#tarife { grid-area: tarife; min-width: 0; overflow: hidden; }
+#evenimente { grid-area: evenimente; }
+#anunturi { grid-area: anunturi; }
+#online { grid-area: online; }
+#utilizatori { grid-area: utilizatori; }
+#server { grid-area: server; }
+#zona-creativa { grid-area: creativ; }
+
+#grid-pagina > * {
+    background-color: var(--culoare-fundal-sectiuni);
+    padding: 1.11rem; 
+    border-radius: 0.44rem; 
+    box-shadow: 0 0.55rem 1.11rem var(--culoare-umbre);
+    border:0.1rem solid grey;
+}
+
+
+.eveniment-card iframe {
+    height: 15rem;
+    width: 30rem;
+    border: solid var(--umbre-iframe);
+    border-radius: 0.66rem; 
+    box-shadow: 0 0.55rem 1.11rem var(--umbre-iframe);
+}
+
+.container-iframe iframe {
+    height: 15rem;
+    width: 60%;
+    border: 0.33rem solid var(--umbre-iframe); 
+    border-style: inset;
+    padding: 0.05rem; 
+    min-width: 60%;
+    box-shadow: 0 0.55rem 1.11rem var(--umbre-iframe);
+}
+
+#faq embed {
+    border-radius: 0.66rem;
+    width: 100%;
+    border: solid var(--umbre-iframe);
+    padding: 0.05rem;
+    max-width: 100%;
+    min-width: 60%;
+    box-shadow: 0 0.55rem 1.11rem var(--umbre-iframe);
+}
+
+.container-iframe {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.taburi-iframe > a {
+    height: 2.2rem; 
+    text-decoration: none;
+    padding: 0.55rem; 
+    border: 0.22rem solid brown; 
+    border-style: double;
+    border-left: none;
+    border-bottom-right-radius: 0.27rem; 
+    border-top-right-radius: 0.27rem;
+    color: brown;
+    background-color: rgb(230, 226, 215);
+    transition: padding-left 0.4s ease, background-color 0.4s linear;
+    text-align: center;
+}
+
+.taburi-iframe > a:hover {
+    background-color: white;
+    width: 100%;
+    padding-left: 1.66rem; 
+}
+
+
+.container-tabel {
+    margin: 1.5rem 0;
+    border: 0.27rem inset var(--c2); 
+}
+
+.tabel {
+    width: 100%;
+    border-collapse: collapse;
+    caption-side: bottom;
+    font-family: inherit;
+}
+
+.tabel caption { padding: 0.8rem; }
+
+.tabel th, .tabel td {
+    padding: 0.7rem;
+    border: 0.05rem solid grey; 
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tabel thead th { background-color: #333; color: white; }
+.tabel tbody tr:nth-child(odd) td { border-bottom: 0.11rem solid var(--c2); }
+.tabel tbody tr:nth-child(even) td { border-bottom: 0.11rem solid var(--c1); }
+
+.tabel tbody tr {
+    transition: outline 0.5s ease;
+    outline: 0.27rem solid transparent;
+    outline-offset: -0.27rem;
+}
+
+.tabel tbody tr:hover { outline: 0.27rem solid var(--culoare-outline); }
+.tabel td[rowspan] { border-bottom: 0.11rem solid var(--c1) !important; }
+.tabel tfoot td { background-color: #333; color: white; font-weight: bold; text-align: center; }
+
+
+.formula-consum {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+    padding: 3rem;
+    background-color: var(--culoare-fundal-sectiuni);
+    border: 0.11rem solid var(--c1);
+    border-radius: 0.66rem;
+}
+
+.formula-consum > * { display: inline-block; vertical-align: middle; }
+mfrac { vertical-align: middle; padding: 0 0.55rem; }
+mfrac mi { text-align: center; }
+
+.variabila-litri {
+    color: #500404;
+    font-style: italic;
+    border-bottom: 0.11rem solid #333;
+    padding-bottom: 0.11rem;
+}
+
+.variabila-km {
+    color: #500404;
+    font-style: italic;
+    padding-top: 0.11rem;
+}
+
+.rezultat { color: var(--c1); font-size: 2.2rem; font-weight: bold; }
+.operator { color: #333; font-size: 1.5rem; padding: 0; }
+.constanta { color: var(--c2); font-weight: bold; font-size: 1.8rem; }
+.variabila-litri, .variabila-km {
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+}
+
+.variabila-litri:hover, .variabila-km:hover {
+    color: var(--c1);
+    transform: scale(1.1);
+    display: inline-block; /* Necesar pentru ca transform sa functioneze */
+}
+
+
+@media screen and (max-width: 1500px) {
+    body { 
+        --margine-main: 2.22rem; 
+    }
+    main {
+        margin-left: var(--margine-main); 
+        margin-right: var(--margine-main);
+    }
+    #grid-pagina {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "prezentare" "creativ" "tarife" "evenimente"
+            "utilizatori" "online" "anunturi" "server";
+    }
+    html { 
+        font-size: 17px; 
+    }
+    #grid-pagina { 
+        gap: 0.5rem; 
+    }
+    .taburi-iframe > a:hover {
+        background-color: rgb(230, 226, 215) !important;
+        padding-left: 0.55rem !important;
+        width: auto !important;
+    }
+    
+    #link-top:hover {
+        opacity: 0.5 !important;
+        background-color: rgb(201, 187, 127) !important;
+    }
+
+    * { animation: 
+        none !important; 
+    }
+    #link-top, #triunghi { 
+        transition: none !important; 
+    }
+    .container-tabel { 
+        overflow-x: scroll; 
+    }
+     video, iframe, embed {
+        min-width: 50%; 
+        height:auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+         --margine-main: 0.83rem; 
+    }
+    main {
+        margin-left: var(--margine-main); 
+        margin-right: var(--margine-main);
+    }
+    #grid-pagina { 
+        gap: 0.3rem; 
+    }
+    .eveniment-card iframe { width: 100%; }
+    html { font-size: 15px; }
+}

@@ -1,0 +1,19 @@
+.page-footer p{
+    margin:0;  
+}
+.page-footer address {
+    text-align: center;
+}
+.page-footer {
+    margin-top: 1.66rem;
+    background-color: #1a1a1a;
+    border-top-left-radius: 2.5rem;
+     border-top-right-radius: 2.5rem;
+}
+.page-footer *{
+    color:white;
+}
+
+.page-footer address iframe{
+    width:100%;
+}
