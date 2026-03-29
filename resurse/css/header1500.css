@@ -1,0 +1,22 @@
+.main-nav .meniu {
+  justify-content: center;
+}
+.main-nav .meniu > li {
+  width: fit-content;
+  padding: 0 2rem;
+  font-size: 0.6rem;
+}
+.main-nav .meniu > li .text-icon {
+  display: none;
+}
+.main-nav .meniu > li .imag-icon {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+.main-nav .meniu > li .imag-icon span, .main-nav .meniu > li .imag-icon i {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+}
+
+/*# sourceMappingURL=header1500.css.map */

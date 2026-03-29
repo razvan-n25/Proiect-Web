@@ -18,9 +18,12 @@
     <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
     <link rel="stylesheet" href="./resurse/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="./resurse/css/header.css" type="text/css" />
+    <link rel="stylesheet" href="./resurse/css/header1500.css" media="screen  and (max-width: 1500px)">
+    <link rel="stylesheet" href="./resurse/css/header700.css" media="screen  and (max-width: 700px)">
     <link rel="stylesheet" href="./resurse/css/linktop.css" type="text/css" />
     <link rel="stylesheet" href="./resurse/css/footer.css" type="text/css" />
     <link rel="stylesheet" href="./resurse/css/general.css" type="text/css" />
+    <link rel="stylesheet" href="./resurse/css/print.css" media="print">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +31,7 @@
 </head>
 
 <body>
+    <div id="watermark-print">Razvan Nica</div>
     <header id="top">
         <div class="main-title">
             <div class="row">
@@ -38,17 +42,23 @@
                 <i class="fa-solid fa-gauge-high iconita-bord"></i>
             </div>
         </div>
-        <!--<label id="hamburger" for="ch-menu">
-            <img src="./resurse/imagini/meniu.png" alt="menu" style="width:30px;">
+        <input type="checkbox" id="ch-menu" /> <label id="hamburger" for="ch-menu">
+            <div class="hamburger-container">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </label>
-        <input type="checkbox" id="ch-menu" />!-->
+        <h1 id="nume">MotoRevit</h1>
         <nav class="main-nav">
             <ul class="meniu">
                 <li>
-                    <div class="text-icon"><a href="index.html">ACASĂ</a></div>
-                    <div class="imag-icon" id="acasa-mediu">
-                        <span class=" fa-solid fa-house"></span>
-                    </div>
+                    <a href="index.html">
+                        <div class="text-icon">ACASĂ</div>
+                        <div class="imag-icon" id="acasa-mediu">
+                            <span class="fa-solid fa-house"></span>
+                        </div>
+                    </a>
                     <ul class="submenu">
                         <li><a href="#prezentare">Prezentare</a></li>
                         <li><a href="#evenimente">Evenimente</a></li>
@@ -57,10 +67,12 @@
                     </ul>
                 </li>
                 <li>
-                    <div class="text-icon"><a href="catalog.html">TOATE PRODUSELE</a></div>
-                    <div class="imag-icon">
-                        <span class="fa-solid fa-motorcycle fa-bounce"></span>
-                    </div>
+                    <a href="catalog.html">
+                        <div class="text-icon">TOATE PRODUSELE</div>
+                        <div class="imag-icon">
+                            <span class="fa-solid fa-motorcycle fa-bounce"></span>
+                        </div>
+                    </a>
                     <ul class="submenu">
                         <li><a href="#">Motociclete</a>
                             <ul class="submenu-inner">
@@ -77,19 +89,28 @@
                     </ul>
                 </li>
                 <li>
-                    <div class="text-icon"><a href="achizitii.html">ACHIZIȚII</a></div>
+                    <a href="achizitii.html">
+                        <div class="text-icon">ACHIZIȚII</div>
+                        <div class="imag-icon">
+                            <span class="fa-solid fa-hand-holding-dollar"></span>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="text-icon"><a href="service.html">SERVICE</a></div>
-                    <div class="imag-icon">
-                        <span class="fa-solid fa-wrench"></span>
-                    </div>
+                    <a href="service.html">
+                        <div class="text-icon">SERVICE</div>
+                        <div class="imag-icon">
+                            <span class="fa-solid fa-wrench"></span>
+                        </div>
+                    </a>
                 </li>
                 <li>
-                    <div class="text-icon"><a href="contact.html">CONTACT</a></div>
-                    <div class="imag-icon">
-                        <span class="fa-solid fa-headset"></span>
-                    </div>
+                    <a href="contact.html">
+                        <div class="text-icon">CONTACT</div>
+                        <div class="imag-icon">
+                            <span class="fa-solid fa-headset"></span>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -364,8 +385,7 @@
                 FMI)</a><br />
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572212.5174483424!2d22.38016005368731!3d45.91593003437419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e1!3m2!1sen!2sro!4v1772829216785!5m2!1sen!2sro"
-                 allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
             Email: <a href="mailto:office@motorevit.ro">office@motorevit.ro</a><br />
             WhatsApp: <a href="https://wa.me/40722000000">Chat rapid</a>
         </address>

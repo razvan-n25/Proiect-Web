@@ -1,0 +1,93 @@
+* {
+    font-size: 10pt !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+
+#grid-pagina, .grid-container, main, section, article {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 1.5rem 0 !important;
+    padding: 0 !important;
+}
+
+
+nav, #hamburger, #ch-menu, #link-top, #triunghi, .imag-icon, .text-icon,
+picture, figure, figcaption, iframe, embed, .container-iframe, .taburi-iframe, meter {
+    display: none !important;
+}
+
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+
+.main-title { 
+    display: block !important;
+    width: 80% !important; 
+    margin: 2cm auto 1.5cm auto !important; 
+    border: 1px dotted black !important; 
+    padding: 15px 3px !important;
+}
+.imagine-logo { max-height: 60px; width: auto; }
+
+
+h1#nume { 
+    display: flex !important; 
+    align-items: center; 
+    justify-content: center;
+    height: 70vh !important; 
+    font-size: 2.5rem !important; 
+    text-decoration: underline !important; 
+    text-align: center !important;
+    page-break-after: always; 
+    break-after: page;
+}
+
+
+#watermark-print {
+    display: flex !important;
+    position: fixed !important; 
+    bottom: 0.5cm !important;
+    left: 0.5cm !important;
+    width: 100px !important;
+    height: 2cm !important;
+    border: 3px double black !important; 
+    opacity: 0.65 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: white !important;
+    z-index: 9999 !important;
+}
+
+
+@page {
+    size: auto;
+    margin: 0; 
+}
+@page :left {
+    margin: 2cm 0.5cm 2cm 2.5cm !important; 
+}
+@page :right {
+    margin: 2cm 2.5cm 2cm 0.5cm !important; 
+}
+
+
+footer {
+    page-break-before: always !important;
+    break-before: page !important;
+    border-top: 1px solid black !important;
+    text-align: center !important;
+    padding-top: 1cm !important;
+}
+
+
+section, article, p {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
