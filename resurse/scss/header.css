@@ -81,6 +81,7 @@ header .main-title .row .iconita-bord {
 
 .main-nav {
   background-color: var(--bg);
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -212,6 +213,4 @@ header .main-title .row .iconita-bord {
 
 .submenu li:nth-child(10) {
   transition-delay: calc(0.05s * 10);
-}
-
-/*# sourceMappingURL=header.css.map */
+}/*# sourceMappingURL=header.css.map */

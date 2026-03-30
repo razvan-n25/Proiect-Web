@@ -121,6 +121,9 @@
 .main-nav .meniu > li:not(:first-child) .text-icon {
   display: block;
 }
+.main-nav .meniu > li:has(ul) > a {
+  pointer-events: none !important;
+}
 .main-nav .meniu > li .submenu, .main-nav .meniu > li .submenu-inner {
   display: block !important;
   position: relative !important;
@@ -144,6 +147,9 @@
   padding: 0.8em 0;
   font-size: 0.9rem;
 }
+.main-nav .meniu > li .submenu li:has(ul) > a {
+  pointer-events: none !important;
+}
 .main-nav .meniu > li .submenu li:hover > .submenu-inner {
   max-height: 31.25rem;
   transform: scaleX(1);
@@ -151,6 +157,4 @@
 .main-nav .meniu > li:hover > .submenu {
   max-height: 125rem;
   transform: scaleX(1);
-}
-
-/*# sourceMappingURL=header700.css.map */
+}/*# sourceMappingURL=header700.css.map */

@@ -1,11 +1,9 @@
-// header1500.scss
-
 .main-nav {
     .meniu {
         justify-content: center;
 
         > li {
-            width: fit-content; 
+            width: 5rem;
             padding: 0 0.5rem;
             font-size: 0.6rem; 
 
@@ -17,12 +15,8 @@
                 display: flex;
                 align-items: center;
                 height: 3rem;
-
-                span, i {
-                    font-size: 1.4rem; 
-                    color: var(--accent-color);
-                }
             }
+            
         }
     }
 }

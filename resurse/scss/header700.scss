@@ -121,6 +121,11 @@ $t: 300ms;
                 .text-icon { display: block; }
             }
 
+            &:has(ul) > a {
+                    pointer-events: none!important;
+                    
+                }
+            
             .submenu, .submenu-inner {
                 display: block !important;
                 position: relative !important;
@@ -147,7 +152,10 @@ $t: 300ms;
                     padding: 0.8em 0;
                     font-size: 0.9rem;
                 }
-
+                &:has(ul) > a {
+                    pointer-events: none!important;
+                    
+                }
                 &:hover > .submenu-inner {
                     max-height: 31.25rem;
                     transform: scaleX(1);
@@ -161,4 +169,3 @@ $t: 300ms;
         }
     }
 }
-
