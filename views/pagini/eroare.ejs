@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Pagina cautata pe MotoRevit nu a fost gasita. Exploreaza restul showroom-ului nostru pentru motociclete si echipamente de top.">
+    <meta name="keywords" content="MotoRevit, eroare 404, motociclete, showroom moto, echipament moto, pagina negasita">
+    <title>MotoRevit - eroare</title>
+    <link rel="stylesheet" type="text/css" href="/resurse/css/eroare.css" <%- include("../fragmente/head.ejs"); %>
+</head>
+
+<body>
+
+    <%- include("../fragmente/header.ejs"); %>
+
+        <main>
+            <div id="err-coloane">
+                <div id="err-imag">
+                    <img src="<%- locals.imagine %>" />
+                </div>
+                <section>
+                    <h2><%- locals.titlu %></h2>
+                    <p><%- locals.text %></p>
+                </section>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs"); %>
+
+
+</body>
+
+</html>

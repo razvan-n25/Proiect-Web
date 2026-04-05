@@ -1,0 +1,15 @@
+video {
+    width: 85%;          
+    min-width: 300px;    
+    max-width: 900px;    
+    display: block;
+    margin: 30px auto;   
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+}
+
+
+video::cue {
+    background-color: white; 
+    color: #222;            
+    font-weight: bold;
+}

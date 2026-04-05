@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>MotoRevit-Service</title>
+    <meta name="keywords"
+        content="service moto, întreținere motociclete, reparații motociclete, schimbare ulei" />
+    <meta name="description"
+        content="MotoRevit - Service autorizat pentru motociclete touring și naked. Oferim întreținere specializată și soluții de finanțare." />
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/service.css" type="text/css" />
+</head>
+
+<body>
+    <div id="watermark-print">Razvan Nica</div>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+    <section id="prezentare-servicii">
+        <h1>Serviciile MotoRevit</h1>
+        <p>La MotoRevit, nu doar vindem motociclete, ci avem grijă ca experiența ta pe două roți să fie sigură și plăcută. 
+           Vizionează videoclipul de mai jos pentru a vedea cum pregătim fiecare unitate înainte de livrare.</p>
+    </section>
+
+    <section id="video-vtt">
+        <h2>Tur Virtual al Service-ului nostru</h2>
+        
+        <video controls 
+               poster="/resurse/imagini/service.png" 
+               preload="metadata" >
+            
+            <source src="/resurse/video/videoclip.mp4" type="video/mp4">
+            <source src="/resurse/video/videoclip.ogv" type="video/ogv">
+
+            <track default 
+                   src="/resurse/video/tracks/mesaje_ro.vtt" 
+                   kind="subtitles" 
+                   srclang="ro" 
+                   label="Română">
+            
+            <track src="/resurse/video/tracks/mesaje_en.vtt" 
+                   kind="subtitles" 
+                   srclang="en" 
+                   label="English">
+            
+            Browserul tău este prea vechi și nu suportă redarea video HTML5.
+        </video>
+    </section>
+</main>
+    <%-include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

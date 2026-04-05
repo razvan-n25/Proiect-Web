@@ -1,0 +1,36 @@
+{
+  "name": "motorevit",
+  "version": "1.0.0",
+  "description": "magazin online de  motociclete si scutere ",
+  "keywords": [
+    "MotoRevit",
+    "motociclete touring",
+    "motociclete naked",
+    "motociclete Honda",
+    "motociclete Ducati",
+    "motociclete Kawasaki",
+    "motocicleta Yamaha",
+    "scootere",
+    "service moto",
+    "rate moto",
+    "evaluare buy-back",
+    "magazin de motociclete"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razvan-n25/proiect-web.git"
+  },
+  "license": "ISC",
+  "author": "Nica Razvan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5"
+  }
+}

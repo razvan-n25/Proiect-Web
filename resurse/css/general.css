@@ -13,6 +13,8 @@ body {
     --c2: #7e5916;
     --culoare-outline: rgba(10, 10, 10, 0.7);
     --margine-main: 6.66rem; 
+    --culoare-simbol-hover: #ff4500; /* Culoarea simbolului la hover */
+    --culoare-pata: #add8e6;         /* Culoarea c1 pentru gradientul radial */
     
     background-color: var(--culoare-fundal-ecran);
     margin: 0.3rem;
@@ -28,6 +30,7 @@ main {
     margin-left: var(--margine-main);
     margin-right: var(--margine-main);
 }
+
 
 #grid-pagina {
     display: grid;
@@ -66,7 +69,43 @@ h2 { font-size: 2rem; font-weight: bold; }
     border:0.1rem solid grey;
 }
 
+main a {
 
+    background-image: radial-gradient(
+        circle, 
+        var(--culoare-pata) 0%, 
+        var(--culoare-pata) 40%, 
+        transparent 80%, 
+        transparent 100%
+    );
+    background-position: center;
+    background-size: 0% 0%; 
+    background-repeat: no-repeat; 
+    transition: background-size 0.3s ease-in-out;
+    text-decoration: underline;
+    padding: 1px 2px; 
+}
+a:visited {
+    color: brown;
+}
+
+a[href^="http"]::before {
+    content: "⮳ ";         
+    font-size: 1.5em;       
+    display: inline-block;  
+    transition: color 0.3s; 
+}
+
+a[href^="http"]:hover::before {
+    color: var(--culoare-simbol-hover);
+}
+main a:hover {
+    background-size: 100% 100%; 
+}
+a:active {
+    border: 2px solid black; 
+    border-radius: 4px;        
+}
 .eveniment-card iframe {
     height: 15rem;
     width: 30rem;
@@ -108,7 +147,7 @@ h2 { font-size: 2rem; font-weight: bold; }
 }
 
 .taburi-iframe > a {
-    height: 2.2rem; 
+    height: 3rem; 
     text-decoration: none;
     padding: 0.55rem; 
     border: 0.22rem solid brown; 
@@ -116,10 +155,10 @@ h2 { font-size: 2rem; font-weight: bold; }
     border-left: none;
     border-bottom-right-radius: 0.27rem; 
     border-top-right-radius: 0.27rem;
-    color: brown;
     background-color: rgb(230, 226, 215);
     transition: padding-left 0.4s ease, background-color 0.4s linear;
     text-align: center;
+    font-size: 0.8em;
 }
 
 .taburi-iframe > a:hover {
@@ -208,6 +247,7 @@ mfrac mi { text-align: center; }
 #watermark-print {
     display: none;
 }
+
 
 @media screen and (max-width: 1500px) {
     body { 
