@@ -28,13 +28,17 @@ for (let folder of vect_foldere){
 
 app.get(["/","/index","/home"], function(req, res) {
     res.render("pagini/index",{
-        ip:req.ip
+        ip:req.ip,
+        imagini: obGlobal.obImagini.imagini
     });
 });
-// app.get("/service", function(req, res) {
-//     res.render("pagini/service");
-// });
+app.get("/service", function(req, res) {
+    res.render("pagini/service", {
+        imagini: obGlobal.obImagini.imagini
+    });
+});
 app.use("/resurse",express.static(path.join(__dirname,"resurse")));
+app.use("/dist",express.static(path.join(__dirname,"node_modules/bootstrap/dist")));
 
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname,"resurse/imagini/favicon/favicon.ico"))
@@ -166,7 +170,88 @@ function afisareEroare(res,identificator,titlu,text,imagine){
 }
 // app.get("/eroare", function(req, res) {
 //     afisareEroare(res,404)
-// });
+// })
+function initImagini(){
+    var continut= fs.readFileSync(path.join(__dirname,"resurse/json/galerie.json")).toString("utf-8");
+
+    obGlobal.obImagini=JSON.parse(continut);
+    let vImagini=obGlobal.obImagini.imagini;
+    let caleGalerie=obGlobal.obImagini.cale_galerie
+
+    let caleAbs=path.join(__dirname,caleGalerie);
+    let caleAbsMediu=path.join(caleAbs, "mediu");
+    let caleAbsMic=path.join(caleAbs, "mic");
+    
+    if (!fs.existsSync(caleAbsMediu))
+        fs.mkdirSync(caleAbsMediu);
+    if (!fs.existsSync(caleAbsMic))
+        fs.mkdirSync(caleAbsMic);
+    
+    for (let imag of vImagini){
+        [numeFis, ext]=imag.cale_imagine.split("."); //"ceva.png" -> ["ceva", "png"]
+        let caleFisAbs=path.join(caleAbs,imag.cale_imagine);
+        let caleFisMediuAbs=path.join(caleAbsMediu, numeFis+".webp");
+        let caleFisMicAbs=path.join(caleAbsMic, numeFis+".webp");
+        
+        sharp(caleFisAbs).resize(350).toFile(caleFisMediuAbs);
+        sharp(caleFisAbs).resize(250).toFile(caleFisMicAbs);
+        
+        imag.fisier_mediu=path.join("/", caleGalerie, "mediu", numeFis+".webp" )
+        imag.fisier_mic=path.join("/", caleGalerie, "mic", numeFis+".webp" )
+        imag.fisier=path.join("/", caleGalerie, imag.cale_imagine )
+        
+    }
+    // console.log(obGlobal.obImagini)
+}
+initImagini();
+
+function compileazaScss(caleScss, caleCss){
+    if(!caleCss){
+
+        let numeFisExt=path.basename(caleScss); // "folder1/folder2/a.scss" -> "a.scss"
+        let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
+        caleCss=numeFis+".css"; // output: a.css
+    }
+    
+    if (!path.isAbsolute(caleScss))
+        caleScss=path.join(obGlobal.folderScss,caleScss )
+    if (!path.isAbsolute(caleCss))
+        caleCss=path.join(obGlobal.folderCss,caleCss )
+    
+    let caleBackup=path.join(obGlobal.folderBackup, "resurse/css");
+    if (!fs.existsSync(caleBackup)) {
+        fs.mkdirSync(caleBackup,{recursive:true})
+    }
+    
+    // la acest punct avem cai absolute in caleScss si  caleCss
+
+    let numeFisCss=path.basename(caleCss);
+    if (fs.existsSync(caleCss)){
+        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css",numeFisCss ))// +(new Date()).getTime()
+    }
+    rez=sass.compile(caleScss, {"sourceMap":true});
+    fs.writeFileSync(caleCss,rez.css)
+    
+}
+
+
+//la pornirea serverului
+vFisiere=fs.readdirSync(obGlobal.folderScss);
+for( let numeFis of vFisiere ){
+    if (path.extname(numeFis)==".scss"){
+        compileazaScss(numeFis);
+    }
+}
+
+
+fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
+    if (eveniment=="change" || eveniment=="rename"){
+        let caleCompleta=path.join(obGlobal.folderScss, numeFis);
+        if (fs.existsSync(caleCompleta)){
+            compileazaScss(caleCompleta);
+        }
+    }
+})
 
 app.get("/*pagina", function(req, res){
     console.log("Cale pagina", req.url);
@@ -204,5 +289,5 @@ app.get("/*pagina", function(req, res){
     }
 });
 
-app.listen(8080);
+app.listen(8080,'0.0.0.0');
 console.log("Serverul a pornit pe portul 8080");

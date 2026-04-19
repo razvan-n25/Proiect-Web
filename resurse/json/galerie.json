@@ -1,0 +1,80 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_imagine":"poza1.png",
+			"titlu":"poza1",
+			"descriere":"Colecție motociclete clasice",
+			"sfert_ora":"1"
+		},
+		{
+			"cale_imagine":"poza2.png",
+			"titlu":"poza2",
+			"descriere":"Sport culori vibrante",
+			"sfert_ora":"2"
+		},
+		{
+			"cale_imagine":"poza3.png",
+			"titlu":"poza3",
+			"descriere":"Harley elegant clasic",
+			"sfert_ora":"3"
+		},
+		{
+			"cale_imagine":"poza4.png",
+			"titlu":"poza4",
+			"descriere":"Sport roșu negru",
+			"sfert_ora":"4"
+		},
+		{
+			"cale_imagine":"poza5.png",
+			"titlu":"poza5",
+			"descriere":"Ducati roșu alb",
+			"sfert_ora":"1"
+		},
+		{
+			"cale_imagine":"poza6.png",
+			"titlu":"poza6",
+			"descriere":"Sport lux alb",
+			"sfert_ora":"2"
+		},
+		{
+			"cale_imagine":"poza7.png",
+			"titlu":"poza7",
+			"descriere":"Atelier moto",
+			"sfert_ora":"3"
+		},
+		{
+			"cale_imagine":"poza8.png",
+			"titlu":"poza8",
+			"descriere":"Sport platformă service",
+			"sfert_ora":"4"
+		},
+		{
+			"cale_imagine":"poza9.png",
+			"titlu":"poza9",
+			"descriere":"Piese accesorii Ducati",
+			"sfert_ora":"1"
+		},
+		{
+			"cale_imagine":"poza10.png",
+			"titlu":"poza10",
+			"descriere":"Cruiser peisaj montan",
+			"sfert_ora":"2"
+		},
+		{
+			"cale_imagine":"poza11.png",
+			"titlu":"poza11",
+			"descriere":"Sport peisaj montan",
+			"sfert_ora":"3"
+		},
+		{
+			"cale_imagine":"poza12.png",
+			"titlu":"poza12",
+			"descriere":"Colectia Silberhorn (2024).",
+			"sfert_ora":"4",
+            "autor": "Wikisympathisant",
+            "sursa": "https://commons.wikimedia.org/wiki/File:Brown-Victoria_and_beige-Express_motorcycle_Silberhorn-Collection_2024-08.jpg",
+            "licenta": "CC BY-SA 4.0"
+		}
+	]
+}

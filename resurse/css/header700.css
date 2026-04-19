@@ -1,0 +1,160 @@
+#ch-menu {
+  display: none;
+}
+
+#hamburger {
+  display: flex;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: var(--bg);
+  width: 70%;
+  margin: 0 auto;
+  justify-content: center;
+  border: 0.125rem solid rgb(141, 9, 9);
+  border-top: none;
+  position: relative;
+  z-index: 1001;
+}
+#hamburger .hamburger-container {
+  width: 1.875rem;
+  height: 1.25rem;
+  position: relative;
+  display: block;
+}
+#hamburger .hamburger-container span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  background-color: white;
+  border-radius: 0.125rem;
+  transition: all 0.4s ease;
+}
+#hamburger .hamburger-container span:nth-child(1) {
+  top: 0;
+}
+#hamburger .hamburger-container span:nth-child(2) {
+  top: 0.5rem;
+}
+#hamburger .hamburger-container span:nth-child(3) {
+  top: 1rem;
+}
+
+#ch-menu:checked ~ #hamburger .hamburger-container span {
+  animation-name: animatie-hamburger !important;
+  animation-duration: 1s !important;
+  animation-fill-mode: forwards !important;
+  display: block !important;
+}
+#ch-menu:checked ~ #hamburger .hamburger-container span:nth-child(1) {
+  animation-delay: 0ms !important;
+}
+#ch-menu:checked ~ #hamburger .hamburger-container span:nth-child(2) {
+  animation-delay: 300ms !important;
+}
+#ch-menu:checked ~ #hamburger .hamburger-container span:nth-child(3) {
+  animation-delay: 600ms !important;
+}
+#ch-menu:checked ~ .main-nav {
+  transform: scaleX(1) !important;
+  max-height: 156.25rem !important;
+}
+
+@keyframes animatie-hamburger {
+  0% {
+    background-color: white;
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    background-color: rgb(141, 9, 9);
+    transform: scale(1.3) rotate(90deg);
+    opacity: 0.4;
+  }
+  100% {
+    background-color: var(--accent-color);
+    transform: scale(1) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+.main-nav {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1000;
+  transform: scaleX(0);
+  transform-origin: left;
+  max-height: 0;
+  transition: transform 0.4s ease-in-out, max-height 0.4s ease-in-out;
+}
+.main-nav .meniu {
+  display: flex;
+  flex-direction: column;
+}
+.main-nav .meniu > li {
+  width: 100%;
+  border: 0.125rem solid rgb(141, 9, 9);
+  border-top: none;
+  box-sizing: border-box;
+}
+.main-nav .meniu > li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
+}
+.main-nav .meniu > li:first-child .text-icon {
+  display: none;
+}
+.main-nav .meniu > li:first-child .imag-icon {
+  display: flex;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+.main-nav .meniu > li:not(:first-child) .imag-icon {
+  display: none;
+}
+.main-nav .meniu > li:not(:first-child) .text-icon {
+  display: block;
+}
+.main-nav .meniu > li:has(ul) > a {
+  pointer-events: none !important;
+}
+.main-nav .meniu > li .submenu, .main-nav .meniu > li .submenu-inner {
+  display: block !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  max-height: 0;
+  background-color: #111;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out, max-height 0.4s ease-in-out;
+  border: none !important;
+}
+.main-nav .meniu > li .submenu-inner {
+  background-color: #000;
+}
+.main-nav .meniu > li .submenu li a {
+  padding: 0.8em 0;
+  font-size: 0.9rem;
+}
+.main-nav .meniu > li .submenu li:has(ul) > a {
+  pointer-events: none !important;
+}
+.main-nav .meniu > li .submenu li:hover > .submenu-inner {
+  max-height: 31.25rem;
+  transform: scaleX(1);
+}
+.main-nav .meniu > li:hover > .submenu {
+  max-height: 125rem;
+  transform: scaleX(1);
+}

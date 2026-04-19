@@ -1,0 +1,25 @@
+.main-nav .meniu {
+  justify-content: center;
+}
+.main-nav .meniu > li {
+  width: 5rem;
+  padding: 0 0.5rem;
+  font-size: 0.6rem;
+}
+.main-nav .meniu > li .text-icon {
+  display: none;
+}
+.main-nav .meniu > li .imag-icon {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.imagine-logo {
+  width: 10em; /* Reducem logo-ul de la ~300px la 150px */
+  height: auto;
+}
+
+.iconita-bord {
+  font-size: 1.5rem !important;
+}

@@ -1,0 +1,103 @@
+@use "../../node_modules/bootstrap/scss/bootstrap" with (
+    $font-family-base: ("Oswald", sans-serif),
+    $h1-font-size: 2.2rem, 
+    $h2-font-size: 1.8rem,
+    $h3-font-size: 1.5rem,
+    
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 800px, 
+        lg: 1150px,
+        xl: 1200px,
+        xxl: 1400px
+    )
+);
+
+.tema-sport {
+    --bs-body-bg: #0f3460;
+    --bs-body-color: #ffffff;
+    --bs-primary: #534141; 
+    --bs-border-radius: 25px; 
+
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    h1, h2, h3, h4, h5, h6 { 
+        --bs-heading-color: #ffffff; 
+    }
+    
+    section { 
+        border-radius: var(--bs-border-radius) !important;
+    }
+
+    .btn-primary {
+        --bs-btn-bg: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-color: #ffffff;
+    }
+}
+
+.tema-luxe {
+    --bs-body-bg: #2d1b4e;
+    --bs-body-color: #fafafa;
+    --bs-primary: #d4af37; 
+    --bs-border-radius: 15px;
+
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    h1, h2, h3, h4, h5, h6 { 
+        --bs-heading-color: #f5e6d3; 
+    }
+
+    section { 
+        border-radius: var(--bs-border-radius) !important;
+    }
+
+    .btn-primary {
+        --bs-btn-bg: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-color: #2d1b4e;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1149px) {
+    h1 { font-size: 2.8rem; } 
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.8rem; }
+}
+
+
+@media screen and (min-width: 1150px) {
+    h1 { font-size: 3.5rem; } 
+    h2 { font-size: 2.8rem; }
+    h3 { font-size: 2.2rem; }
+}
+
+body.tema-sport { @extend .tema-sport; }
+body.tema-luxe { @extend .tema-luxe; }
+
+// reparatii
+.placeholder {
+    opacity: 1;
+    cursor: default; 
+    animation: none;
+    background-color: #969694;
+}
+
+*, *::before, *::after {
+    box-sizing: content-box;
+}
+
+.main-title .row {
+    margin-left: 0;
+    margin-right: 0;
+    a { width: auto; padding: 0; }
+    i { padding: 0; }
+}
+
+main a {
+    color: #0000EE;
+}

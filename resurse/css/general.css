@@ -85,24 +85,24 @@ main a {
     text-decoration: underline;
     padding: 1px 2px; 
 }
-a:visited {
+main a:visited {
     color: brown;
 }
 
-a[href^="http"]::before {
+main a[href^="http"]::before {
     content: "⮳ ";         
     font-size: 1.5em;       
     display: inline-block;  
     transition: color 0.3s; 
 }
 
-a[href^="http"]:hover::before {
+main a[href^="http"]:hover::before {
     color: var(--culoare-simbol-hover);
 }
 main a:hover {
     background-size: 100% 100%; 
 }
-a:active {
+main a:active {
     border: 2px solid black; 
     border-radius: 4px;        
 }
@@ -248,6 +248,51 @@ mfrac mi { text-align: center; }
     display: none;
 }
 
+/* galerie */
+#grid-galerie {
+    counter-reset: index_galerie; 
+}
+
+#grid-galerie figure  {
+    counter-increment: index_galerie;
+    padding: 4px;
+    border:2px solid var(--c2);
+    transition: all 1.2s linear;
+}
+#grid-galerie figure:hover {
+    
+    border-width: 6px;
+}
+#grid-galerie figure img{
+    transition: all 1.2s linear;
+}
+#grid-galerie figure:hover img {
+    transform: scale(1.25) rotate(-10deg);
+}
+#grid-galerie figcaption::before {
+    content: counter(index_galerie, upper-roman) ". ";
+    font-weight: bold;
+}
+#grid-galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    grid-template-rows: repeat(4, auto);
+}
+#grid-galerie .spatiu-gol {
+    border:2px solid var(--c2);
+    width: 100%;
+    height: auto;
+}
+
+#galerie-statica h2 {
+        text-align: center;
+}
+#grid-galerie figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
 
 @media screen and (max-width: 1500px) {
     body { 
@@ -297,6 +342,15 @@ mfrac mi { text-align: center; }
         min-width: 50%; 
         height:auto;
     }
+    #grid-galerie {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        padding-top: 15px;
+    }
+    .spatiu-gol {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -312,4 +366,7 @@ mfrac mi { text-align: center; }
     }
     .eveniment-card iframe { width: 100%; }
     html { font-size: 15px; }
+    #grid-galerie {
+        grid-template-columns: 1fr; 
+    }
 }

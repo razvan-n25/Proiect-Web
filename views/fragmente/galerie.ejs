@@ -1,0 +1,36 @@
+<section id="galerie-statica">
+                <h2>Galerie</h2>
+                <div id="grid-galerie">
+                    <% 
+                        let now = new Date(); 
+                        let minutes = now.getMinutes(); 
+                        let sfert_ora_curent = Math.floor(minutes / 15) + 1; 
+                        let imagini_filtrate = locals.imagini.filter(img => img.sfert_ora == sfert_ora_curent).slice(0, 10);
+                        let contor_grid = 1;
+                    %>
+
+                    <% for(let imag of imagini_filtrate) { %>
+                        <% if(contor_grid === 5 || contor_grid === 8) { %>
+                            <div class="spatiu-gol"></div>
+                            <% contor_grid++; %>
+                        <% } %>
+                        <figure>
+                            <picture>
+                                <source srcset="<%- imag.fisier_mic %>" media="(max-width:700px)">
+                                <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)">
+                                <img src="<%- imag.fisier %>" alt="<%- imag.titlu %>" title="<%- imag.descriere %>">
+                            </picture>
+                            <figcaption>
+                                <%- imag.descriere %>
+                                <% if(imag.autor && imag.licenta && imag.sursa) { %>
+                                    <br>
+                                    <small>
+                                        Foto: <%= imag.autor %> | Licenta: <%= imag.licenta %> | Sursa: <a href="<%= imag.sursa %>" target="_blank">Link</a>
+                                    </small>
+                                <% } %>
+                            </figcaption>
+                        </figure>
+                        <% contor_grid++; %>
+                    <% } %>
+                </div>
+</section>

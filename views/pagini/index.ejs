@@ -14,268 +14,301 @@
 <body>
     <div id="watermark-print">Razvan Nica</div>
     <%- include("../fragmente/header.ejs") %>
-    <main class="content-wrapper">
-        <div id="grid-pagina">
-            <section id="prezentare">
-                <hgroup>
-                    <h2>Lider în Soluții de Mobilitate</h2>
-                    <p>Cel mai modern <b>magazin de motociclete</b> cu oferte saptamanal.</p>
-                    <p>IP: <%- locals.ip  %></p>
-                </hgroup>
-                <p><b>MotoRevit</b> distribuie <b>motociclete de diferite branduri</b> la standarde europene.</p>
-                <dl>
-                    <dt>Mentenanță</dt>
-                    <dd>Asigurăm <b>service moto</b> pentru orice model nipon.</dd>
-                </dl>
-                <article class="about-section">
-                    <h2>Despre Noi</h2>
-                    <p>Suntem specialiști în <b>motociclete de vânzare</b>. Consultanții noștri vă ajută cu cele mai
-                        bune <b>rate moto</b>.</p>
-                </article>
-                <figure class="hero-image">
-                    <a href="/resurse/imagini/showroom-mare.png">
-                        <picture>
-                            <source srcset="/resurse/imagini/showroom-mic.png" media="(max-width: 700px)" />
-                            <source srcset="/resurse/imagini/showroom-mediu.png" media="(max-width: 1500px)" />
-                            <img src="/resurse/imagini/showroom-mare.png" alt="Interior showroom MotoRevit"
-                                title="Vizitează Showroom-ul nostru" />
-                        </picture>
-                    </a>
-                    <figcaption class="image-caption">Showroom-ul central MotoRevit - Peste 50 de modele expuse.
-                    </figcaption>
-                </figure>
-            </section>
-            <section id="evenimente">
-                <h2>Evenimente</h2>
-                <ol>
-                    <li>
-                        <article class="eveniment-card">
-                            <h3>Workshop: Mentenanță de Primăvară</h3>
-                            <p>Învață cum să îți pregătești motocicleta pentru sezonul 2026. <br>
-                                Data: <time datetime="2026-03-15T10:00">15 Martie, ora 10:00</time></p>
-                        </article>
-                    </li>
+        <main class="content-wrapper">
+            <div id="grid-pagina">
+                <section id="prezentare">
+                    <hgroup>
+                        <h2>Lider în Soluții de Mobilitate</h2>
+                        <p>Cel mai modern <b>magazin de motociclete</b> cu oferte saptamanal.</p>
+                        <p><button class="btn btn-primary">Vizitează Showroom-ul nostru</button></p>
+                        <p>IP: <%- locals.ip %></p>
+                    </hgroup>
+                    <p><b>MotoRevit</b> distribuie <b>motociclete de diferite branduri</b> la standarde europene.</p>
+                    <dl>
+                        <dt>Mentenanță</dt>
+                        <dd>Asigurăm <b>service moto</b> pentru orice model nipon.</dd>
+                    </dl>
+                    <article class="about-section">
+                        <h2>Despre Noi</h2>
+                        <p>Suntem specialiști în <b>motociclete de vânzare</b>. Consultanții noștri vă ajută cu cele mai
+                            bune <b>rate moto</b>.</p>
+                    </article>
+                    <figure class="hero-image">
+                        <a href="/resurse/imagini/showroom-mare.png">
+                            <picture>
+                                <source srcset="/resurse/imagini/showroom-mic.png" media="(max-width: 700px)" />
+                                <source srcset="/resurse/imagini/showroom-mediu.png" media="(max-width: 1500px)" />
+                                <img src="/resurse/imagini/showroom-mare.png" alt="Interior showroom MotoRevit"
+                                    title="Vizitează Showroom-ul nostru" />
+                            </picture>
+                        </a>
+                        <figcaption class="image-caption">Showroom-ul central MotoRevit - Peste 50 de modele expuse.
+                        </figcaption>
+                    </figure>
+                </section>
+                <section id="evenimente">
+                    <h2>Evenimente</h2>
+                    <ol>
+                        <li>
+                            <article class="eveniment-card">
+                                <h3>Workshop: Mentenanță de Primăvară</h3>
+                                <p>Învață cum să îți pregătești motocicleta pentru sezonul 2026. <br>
+                                    Data: <time datetime="2026-03-15T10:00">15 Martie, ora 10:00</time></p>
+                            </article>
+                        </li>
 
-                    <li>
-                        <article class="eveniment-card">
-                            <h3>Lansare Modele 2026</h3>
-                            <p>O gamă întreagă de motociclete Kawasaki și scootere noi. Vino să testezi noile
-                                <b>motociclete touring</b> Honda în showroom-ul nostru, dar și noile motociclete Ducati.
-                            </p>
-                        </article>
-                    </li>
+                        <li>
+                            <article class="eveniment-card">
+                                <h3>Lansare Modele 2026</h3>
+                                <p>O gamă întreagă de motociclete Kawasaki și scootere noi. Vino să testezi noile
+                                    <b>motociclete touring</b> Honda în showroom-ul nostru, dar și noile motociclete
+                                    Ducati.
+                                </p>
+                            </article>
+                        </li>
 
-                    <li>
-                        <article class="eveniment-card">
-                            <h3>Noul calendar FRM</h3>
-                            <a href="/resurse/CALENDAR-2026-V07-02.03.2026.pdf"
-                                download="Calendar_Competitii_Moto_Romania_2026.pdf">
-                                Descarcă Noul Calendar Moto România 2026 (PDF Oficial)
-                            </a>
-                        </article>
-                    </li>
+                        <li>
+                            <article class="eveniment-card">
+                                <h3>Noul calendar FRM</h3>
+                                <a href="/resurse/CALENDAR-2026-V07-02.03.2026.pdf"
+                                    download="Calendar_Competitii_Moto_Romania_2026.pdf">
+                                    Descarcă Noul Calendar Moto România 2026 (PDF Oficial)
+                                </a>
+                            </article>
+                        </li>
 
-                    <li>
-                        <article class="eveniment-card">
-                            <h3>RedBull Romaniacs 2025</h3>
-                            <iframe 
-                                src="
+                        <li>
+                            <article class="eveniment-card">
+                                <h3>RedBull Romaniacs 2025</h3>
+                                <iframe
+                                    src="
                                 https://www.youtube.com/embed/4fMsVuV-7mQ?playlist=4fMsVuV-7mQ,aenWo2Hlysk&autoplay=1&loop=1&mute=1&controls=1"
-                                title="MotoRevit Playlist Automat" frameborder="0" allow="autoplay; encrypted-media"
-                                allowfullscreen>
-                            </iframe>
-                        </article>
-                    </li>
-                </ol>
-            </section>
-            <section id="zona-creativa">
-                <div id="media">
-                    <h2>Tutoriale si Review-uri</h2>
-                    <div class="zona-text">
-                        <p>Exploreaza cele mai noi aparitii din lumea moto si invata secretele intretinerii mecanice
-                            direct
-                            de la expertii nostri. Postam saptamanal continut video pentru pasionatii de viteza si
-                            mecanica.
-                        </p>
-                        <p>In aceasta sectiune gasesti:</p>
-                        <ul>
-                            <li><strong>Teste pe circuit:</strong> Analizam manevrabilitatea si puterea modelelor de
-                                top.
-                            </li>
-                            <li><strong>Sfaturi practice:</strong> Ghiduri rapide pentru intretinerea lantului, schimbul
-                                de
-                                ulei si verificarea franelor.</li>
-                            <li><strong>Noutati 2026:</strong> Prezentari exclusive ale noilor tehnologii Honda si
-                                Yamaha.
-                            </li>
-                        </ul>
-                        <p>Alege un videoclip din lista de mai sus pentru a incepe vizionarea in player-ul de langa.</p>
-                    </div>
-                    <div class="container-iframe">
-                        <div class="taburi-iframe">
-                            <a href="https://www.youtube.com/embed/exPo-m9hTAI" target="ifr-video">Honda CB
-                                650F</a>
-                            <a href="https://www.youtube.com/embed/I7r92oEav6Q" target="ifr-video">Înlocuire
-                                lanț</a>
-                            <a href="https://www.youtube.com/embed/sbDE8mRnLnQ" target="ifr-video">
-                                Yamaha
-                                MT-09</a>
+                                    title="MotoRevit Playlist Automat" frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen>
+                                </iframe>
+                            </article>
+                        </li>
+                    </ol>
+                </section>
+                <section id="zona-creativa">
+                    <div id="media">
+                        <h2>Tutoriale si Review-uri</h2>
+                        <div class="zona-text">
+                            <p>Exploreaza cele mai noi aparitii din lumea moto si invata secretele intretinerii mecanice
+                                direct
+                                de la expertii nostri. Postam saptamanal continut video pentru pasionatii de viteza si
+                                mecanica.
+                            </p>
+                            <p>In aceasta sectiune gasesti:</p>
+                            <ul>
+                                <li><strong>Teste pe circuit:</strong> Analizam manevrabilitatea si puterea modelelor de
+                                    top.
+                                </li>
+                                <li><strong>Sfaturi practice:</strong> Ghiduri rapide pentru intretinerea lantului,
+                                    schimbul
+                                    de
+                                    ulei si verificarea franelor.</li>
+                                <li><strong>Noutati 2026:</strong> Prezentari exclusive ale noilor tehnologii Honda si
+                                    Yamaha.
+                                </li>
+                            </ul>
+                            <p>Alege un videoclip din lista de mai sus pentru a incepe vizionarea in player-ul de langa.
+                            </p>
                         </div>
-                        <iframe name="ifr-video" src="https://www.youtube.com/embed/exPo-m9hTAI" title="MotoRevit TV"
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a href="https://www.youtube.com/embed/exPo-m9hTAI" target="ifr-video">Honda CB
+                                    650F</a>
+                                <a href="https://www.youtube.com/embed/I7r92oEav6Q" target="ifr-video">Înlocuire
+                                    lanț</a>
+                                <a href="https://www.youtube.com/embed/sbDE8mRnLnQ" target="ifr-video">
+                                    Yamaha
+                                    MT-09</a>
+                            </div>
+                            <iframe name="ifr-video" src="https://www.youtube.com/embed/exPo-m9hTAI"
+                                title="MotoRevit TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                         gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div id="faq">
-                        <h2>Întrebări și Resurse</h2>
-                        <details>
-                            <summary>Ce acte sunt necesare pentru <b>evaluare buy-back</b>?</summary>
-                            <p>Cartea CIV, talonul și actul de identitate.</p>
-                        </details>
-                        <details>
-                            <summary>Unde se fac limitări A2?</summary>
-                            <p>În locația noastră din București, Sector 1.</p>
-                        </details>
-                        <p>Stoc motociclete showroom: <meter min="0" max="100" low="30" high="75" value="15"></meter>
-                            (Limitat)
-                        </p>
-                        <p>Review-uri motociclete Honda: <meter min="0" max="5" value="4.8" optimum="5"></meter>
-                            (Excelent)
-                        </p>
-                        <p>Vezi: <a href="https://www.honda-moto.ro" target="_blank">Site Oficial Honda</a>.</p>
-                        <p>Tipuri de Motociclete: <a
-                                href="https://ro.wikipedia.org/wiki/Motocicletă#Tipuri_de_motociclete">https://ro.wikipedia.org/wiki<wbr>/Motocicletă#Tipuri_de_motociclete</a>
-                        </p>
-                        <h3>Noua tehnologie E-Clutch Honda</h3>
-                        <embed src="/resurse/Honda-E-Clutch.pdf" type="application/pdf"
-                            style="width: 100%; height: 500px;">
-                    </div>
+                                allowfullscreen></iframe>
+                        </div>
+                        <div id="faq">
+                            <h2>Întrebări și Resurse</h2>
+                            <details>
+                                <summary>Ce acte sunt necesare pentru <b>evaluare buy-back</b>?</summary>
+                                <p>Cartea CIV, talonul și actul de identitate.</p>
+                            </details>
+                            <details>
+                                <summary>Unde se fac limitări A2?</summary>
+                                <p>În locația noastră din București, Sector 1.</p>
+                            </details>
+                            <p>Stoc motociclete showroom: <meter min="0" max="100" low="30" high="75"
+                                    value="15"></meter>
+                                (Limitat)
+                            </p>
+                            <p>Review-uri motociclete Honda: <meter min="0" max="5" value="4.8" optimum="5"></meter>
+                                (Excelent)
+                            </p>
+                            <p>Vezi: <a href="https://www.honda-moto.ro" target="_blank">Site Oficial Honda</a>.</p>
+                            <p>Tipuri de Motociclete: <a
+                                    href="https://ro.wikipedia.org/wiki/Motocicletă#Tipuri_de_motociclete">https://ro.wikipedia.org/wiki<wbr>/Motocicletă#Tipuri_de_motociclete</a>
+                            </p>
+                            <h3>Noua tehnologie E-Clutch Honda</h3>
+                            <embed src="/resurse/Honda-E-Clutch.pdf" type="application/pdf"
+                                style="width: 100%; height: 500px;">
+                        </div>
 
-            </section>
-            <section id="tarife">
-                <h2>Tarife Service</h2>
-                <div class="container-tabel">
-                    <table class="tabel">
-                        <caption>Tarife Service și Mentenanță <b>MotoRevit</b></caption>
-                        <thead>
-                            <tr>
-                                <th>Tip Pachet</th>
-                                <th>Operațiuni Incluse</th>
-                                <th>Manoperă</th>
-                                <th>Durată</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">Schimb Fluide</td>
-                                <td>Ulei + Filtru Motor</td>
-                                <td>150 RON</td>
-                                <td>45 min</td>
-                            </tr>
-                            <tr>
-                                <td>Lichid Frână <abbr title="Department of Transportation 4">DOT4</abbr></td>
-                                <td>100 RON</td>
-                                <td>30 min</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Diagnoză completă pentru toate tipurile de motociclete</td>
-                                <td>250 RON</td>
-                                <td>60 min</td>
-                            </tr>
-                            <tr>
-                                <td>Kit Lanț</td>
-                                <td>Curățare, Ungere și Întindere</td>
-                                <td>80 RON</td>
-                                <td>20 min</td>
-                            </tr>
-                            <tr>
-                                <td>Piese <abbr title="Original Equipment Manufacturer">OEM</abbr></td>
-                                <td>Montaj accesorii Honda</td>
-                                <td>Variază</td>
-                                <td>90 min</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4">Clienții care au cumpărat motocicleta în <b>rate moto</b> beneficiază de
-                                    10%
-                                    reducere.</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <h3>Calcul Eficiență Consum</h3>
-                <p>Poți calcula consumul motocicletei tale folosind formula:</p>
-                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="formula-consum">
-                    <mi class="rezultat">C</mi>
-                    <mo class="operator">=</mo>
-                    <mfrac>
-                        <mi class="variabila-litri">Litri</mi>
-                        <mi class="variabila-km">km</mi>
-                    </mfrac>
-                    <mo class="operator">&#xD7;</mo>
-                    <mn class="constanta">100</mn>
-                </math>
-            </section>
-            <section id="anunturi" class="placeholder">
-                <h3>Anunturi</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam aliquid eius officia pariatur, cum
-                    ea quidem error voluptates. Molestias rem ipsa magnam eos temporibus, quo hic? Numquam sint minus,
-                    nesciunt facilis accusamus distinctio ipsam ea error excepturi deleniti corporis vel nihil pariatur,
-                    assumenda magnam optio voluptatibus quos voluptate consectetur porro veritatis reprehenderit?
-                    Perferendis quibusdam quasi enim sequi! Earum debitis repellendus, possimus ullam quidem sint fuga
-                    ut consequuntur magni asperiores esse inventore sequi excepturi illo dolorem, nemo assumenda dicta
-                    dolor iste optio velit laborum dignissimos magnam? Sed explicabo a similique quae. Voluptas,
-                    incidunt voluptatibus necessitatibus accusantium maxime esse. Ipsum, veniam hic?</p>
-            </section>
-            <section id="online" class="placeholder">
-                <h3>Online</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nisi amet enim deserunt dolor
-                    vel illo quis neque suscipit eum reprehenderit sed hic rem, asperiores voluptatibus numquam nam
-                    sapiente. Nisi, odio. Perferendis quos corrupti maiores doloremque assumenda id totam odit minima
-                    natus dolores placeat voluptatum sit, quisquam fugit soluta, voluptatibus quis obcaecati debitis!
-                    Provident nobis voluptate voluptatem atque hic maxime et, consectetur aut incidunt, quidem pariatur
-                    magnam cumque quam mollitia eveniet doloremque exercitationem ipsum beatae sequi modi porro tempora
-                    eligendi perferendis. Fuga, aperiam animi laborum excepturi labore voluptates rerum error, hic esse
-                    modi quidem quaerat eum ratione cumque saepe qui iure dignissimos doloremque officia facere? Ex
-                    nobis, sapiente enim eligendi eaque cupiditate earum cum quasi laboriosam? Inventore ipsum veritatis
-                    corporis magni autem laboriosam, provident explicabo vero atque, hic amet voluptatibus nam ducimus
-                    labore dignissimos quo porro et alias animi, obcaecati sequi ipsam voluptate minima! Consequatur
-                    officia, dicta odio sed rem, soluta modi voluptatem ipsam nisi, odit perspiciatis delectus illum
-                    ratione repellat impedit maxime cum neque repellendus optio. Ex numquam perferendis aperiam quos
-                    commodi tenetur nisi inventore quaerat eum fugiat, officiis fugit sit eius accusamus. Esse id
-                    consectetur exercitationem, nostrum culpa architecto fugiat dolorum maiores tempora voluptatem ipsam
-                    ab dolores cumque.</p>
-            </section>
-            <section id="utilizatori" class="placeholder">
-                <h3>Statistici si utilizatori</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nemo corrupti quidem illum
-                    praesentium debitis eligendi quo hic corporis. Ut vel praesentium dicta dignissimos libero. Nobis,
-                    quas vitae? Debitis ex dolorum repellendus modi nobis vero iste quam quaerat? Pariatur expedita
-                    omnis quasi nam. Id quidem exercitationem nemo eveniet quae harum optio magnam a cupiditate, et esse
-                    aperiam consectetur eaque doloribus sequi quas dignissimos sint, unde illo architecto molestiae
-                    explicabo expedita asperiores repellat. Magnam odio corrupti ducimus nesciunt modi delectus! Cum,
-                    dolorum quae fugiat et dolore exercitationem quod magni odio iste temporibus enim, dolor repudiandae
-                    provident dolorem nulla. Hic amet possimus dolore provident blanditiis, iusto dolores voluptates ad,
-                    perspiciatis deserunt deleniti! Nisi, repellendus eos facilis possimus consequatur officia nobis
-                    obcaecati minus nemo necessitatibus minima. Ratione minima similique possimus ab sit nesciunt natus
-                    amet quasi quo in officiis accusamus quod veniam necessitatibus rem est id ea quibusdam unde
-                    aperiam, nam consequuntur perspiciatis magnam cupiditate. Earum praesentium laudantium numquam, quia
-                    tempore quisquam doloremque tempora non fuga autem eum corporis nobis ab eos voluptates rerum minus
-                    eaque dolore iure explicabo id! Reprehenderit, numquam! Omnis aspernatur incidunt ratione saepe,
-                    nisi vitae provident accusamus excepturi impedit ad qui, blanditiis unde amet dolorem delectus sit,
-                    at error?</p>
-            </section>
-            <section id="server" class="placeholder">
-                <h3>Server</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias est esse nobis magnam saepe deserunt a
-                    explicabo, totam repudiandae, quas dolores pariatur facere quam consectetur architecto repellendus
-                    accusantium maiores dolorem adipisci, atque nemo non? Molestiae dolor suscipit, accusantium autem
-                    impedit beatae minima, doloremque magnam, et velit quas alias excepturi dolore.</p>
-            </section>
-        </div>
-    </main>
-    <%-include("../fragmente/footer.ejs") %>
+                </section>
+                <section id="tarife">
+                    <h2>Tarife Service</h2>
+                    <div class="container-tabel">
+                        <table class="tabel">
+                            <caption>Tarife Service și Mentenanță <b>MotoRevit</b></caption>
+                            <thead>
+                                <tr>
+                                    <th>Tip Pachet</th>
+                                    <th>Operațiuni Incluse</th>
+                                    <th>Manoperă</th>
+                                    <th>Durată</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Schimb Fluide</td>
+                                    <td>Ulei + Filtru Motor</td>
+                                    <td>150 RON</td>
+                                    <td>45 min</td>
+                                </tr>
+                                <tr>
+                                    <td>Lichid Frână <abbr title="Department of Transportation 4">DOT4</abbr></td>
+                                    <td>100 RON</td>
+                                    <td>30 min</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Diagnoză completă pentru toate tipurile de motociclete</td>
+                                    <td>250 RON</td>
+                                    <td>60 min</td>
+                                </tr>
+                                <tr>
+                                    <td>Kit Lanț</td>
+                                    <td>Curățare, Ungere și Întindere</td>
+                                    <td>80 RON</td>
+                                    <td>20 min</td>
+                                </tr>
+                                <tr>
+                                    <td>Piese <abbr title="Original Equipment Manufacturer">OEM</abbr></td>
+                                    <td>Montaj accesorii Honda</td>
+                                    <td>Variază</td>
+                                    <td>90 min</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Clienții care au cumpărat motocicleta în <b>rate moto</b>
+                                        beneficiază de
+                                        10%
+                                        reducere.</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <h3>Calcul Eficiență Consum</h3>
+                    <p>Poți calcula consumul motocicletei tale folosind formula:</p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="formula-consum">
+                        <mi class="rezultat">C</mi>
+                        <mo class="operator">=</mo>
+                        <mfrac>
+                            <mi class="variabila-litri">Litri</mi>
+                            <mi class="variabila-km">km</mi>
+                        </mfrac>
+                        <mo class="operator">&#xD7;</mo>
+                        <mn class="constanta">100</mn>
+                    </math>
+                </section>
+                <section id="anunturi" class="placeholder">
+                    <h3>Anunturi</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam aliquid eius officia pariatur,
+                        cum
+                        ea quidem error voluptates. Molestias rem ipsa magnam eos temporibus, quo hic? Numquam sint
+                        minus,
+                        nesciunt facilis accusamus distinctio ipsam ea error excepturi deleniti corporis vel nihil
+                        pariatur,
+                        assumenda magnam optio voluptatibus quos voluptate consectetur porro veritatis reprehenderit?
+                        Perferendis quibusdam quasi enim sequi! Earum debitis repellendus, possimus ullam quidem sint
+                        fuga
+                        ut consequuntur magni asperiores esse inventore sequi excepturi illo dolorem, nemo assumenda
+                        dicta
+                        dolor iste optio velit laborum dignissimos magnam? Sed explicabo a similique quae. Voluptas,
+                        incidunt voluptatibus necessitatibus accusantium maxime esse. Ipsum, veniam hic?</p>
+                </section>
+                <section id="online" class="placeholder">
+                    <h3>Online</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nisi amet enim deserunt
+                        dolor
+                        vel illo quis neque suscipit eum reprehenderit sed hic rem, asperiores voluptatibus numquam nam
+                        sapiente. Nisi, odio. Perferendis quos corrupti maiores doloremque assumenda id totam odit
+                        minima
+                        natus dolores placeat voluptatum sit, quisquam fugit soluta, voluptatibus quis obcaecati
+                        debitis!
+                        Provident nobis voluptate voluptatem atque hic maxime et, consectetur aut incidunt, quidem
+                        pariatur
+                        magnam cumque quam mollitia eveniet doloremque exercitationem ipsum beatae sequi modi porro
+                        tempora
+                        eligendi perferendis. Fuga, aperiam animi laborum excepturi labore voluptates rerum error, hic
+                        esse
+                        modi quidem quaerat eum ratione cumque saepe qui iure dignissimos doloremque officia facere? Ex
+                        nobis, sapiente enim eligendi eaque cupiditate earum cum quasi laboriosam? Inventore ipsum
+                        veritatis
+                        corporis magni autem laboriosam, provident explicabo vero atque, hic amet voluptatibus nam
+                        ducimus
+                        labore dignissimos quo porro et alias animi, obcaecati sequi ipsam voluptate minima! Consequatur
+                        officia, dicta odio sed rem, soluta modi voluptatem ipsam nisi, odit perspiciatis delectus illum
+                        ratione repellat impedit maxime cum neque repellendus optio. Ex numquam perferendis aperiam quos
+                        commodi tenetur nisi inventore quaerat eum fugiat, officiis fugit sit eius accusamus. Esse id
+                        consectetur exercitationem, nostrum culpa architecto fugiat dolorum maiores tempora voluptatem
+                        ipsam
+                        ab dolores cumque.</p>
+                </section>
+                <section id="utilizatori" class="placeholder">
+                    <h3>Statistici si utilizatori</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nemo corrupti quidem illum
+                        praesentium debitis eligendi quo hic corporis. Ut vel praesentium dicta dignissimos libero.
+                        Nobis,
+                        quas vitae? Debitis ex dolorum repellendus modi nobis vero iste quam quaerat? Pariatur expedita
+                        omnis quasi nam. Id quidem exercitationem nemo eveniet quae harum optio magnam a cupiditate, et
+                        esse
+                        aperiam consectetur eaque doloribus sequi quas dignissimos sint, unde illo architecto molestiae
+                        explicabo expedita asperiores repellat. Magnam odio corrupti ducimus nesciunt modi delectus!
+                        Cum,
+                        dolorum quae fugiat et dolore exercitationem quod magni odio iste temporibus enim, dolor
+                        repudiandae
+                        provident dolorem nulla. Hic amet possimus dolore provident blanditiis, iusto dolores voluptates
+                        ad,
+                        perspiciatis deserunt deleniti! Nisi, repellendus eos facilis possimus consequatur officia nobis
+                        obcaecati minus nemo necessitatibus minima. Ratione minima similique possimus ab sit nesciunt
+                        natus
+                        amet quasi quo in officiis accusamus quod veniam necessitatibus rem est id ea quibusdam unde
+                        aperiam, nam consequuntur perspiciatis magnam cupiditate. Earum praesentium laudantium numquam,
+                        quia
+                        tempore quisquam doloremque tempora non fuga autem eum corporis nobis ab eos voluptates rerum
+                        minus
+                        eaque dolore iure explicabo id! Reprehenderit, numquam! Omnis aspernatur incidunt ratione saepe,
+                        nisi vitae provident accusamus excepturi impedit ad qui, blanditiis unde amet dolorem delectus
+                        sit,
+                        at error?</p>
+                </section>
+                <section id="server" class="placeholder">
+                    <h3>Server</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias est esse nobis magnam saepe
+                        deserunt a
+                        explicabo, totam repudiandae, quas dolores pariatur facere quam consectetur architecto
+                        repellendus
+                        accusantium maiores dolorem adipisci, atque nemo non? Molestiae dolor suscipit, accusantium
+                        autem
+                        impedit beatae minima, doloremque magnam, et velit quas alias excepturi dolore.</p>
+                </section>
+            </div>
+            <%- include("../fragmente/galerie.ejs") %> 
+        </main>
+        <%-include("../fragmente/footer.ejs") %>
 </body>
 
 </html>
