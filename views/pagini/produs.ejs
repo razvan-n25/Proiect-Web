@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>MotoRevit - <%- prod.nume %></title>
+    <meta name="description" content="<%- prod.descriere.substring(0, 155) %>...">
+    <meta name="keywords" content="MotoRevit, <%- prod.marca %>, <%- prod.nume %>, <%- prod.utilizare %>, <%- prod.categorie.replace(/_/g,' ') %>, motociclete, scutere">
+    <link rel="stylesheet" href="/resurse/css/produs.css">
+    <%- include('../fragmente/head') %>
+</head>
+
+<body>
+    <%- include('../fragmente/header') %>
+
+    <main>
+        <%
+            const zile = ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
+            const luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+            let dataObj = new Date(prod.data_fabricatie);
+            let formatData = `${zile[dataObj.getDay()]}, ${dataObj.getDate()} ${luni[dataObj.getMonth()]} ${dataObj.getFullYear()}`;
+        %>
+
+        <div id="produs-page">
+
+            <a href="/produse" class="btn-inapoi">
+                <i class="bi bi-arrow-left-circle-fill"></i> Înapoi la produse
+            </a>
+
+            <section id="produs-hero">
+                <div id="produs-imagine-wrap">
+                    <img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="<%- prod.nume %>">
+                    <span class="badge-stoc <%- prod.in_stoc ? 'in-stoc' : 'lipsa-stoc' %>">
+                        <i class="bi <%- prod.in_stoc ? 'bi-check-circle-fill' : 'bi-x-circle-fill' %>"></i>
+                        <%- prod.in_stoc ? 'În stoc' : 'Indisponibil' %>
+                    </span>
+                </div>
+
+                <div id="produs-sumar">
+                    <span class="eticheta-categorie"><%- prod.categorie.replace(/_/g, ' ') %></span>
+                    <h1><%- prod.nume %></h1>
+                    <p class="produs-marca"><i class="bi bi-tag-fill"></i> <%- prod.marca %></p>
+                    <div class="produs-pret"><%- prod.pret %> <span>€</span></div>
+
+                    <ul class="produs-spec-rapide">
+                        <li>
+                            <i class="bi bi-speedometer2"></i>
+                            <span><%- prod.capacitate_motor %> cc</span>
+                            <small>Capacitate motor</small>
+                        </li>
+                        <li>
+                            <i class="bi bi-card-checklist"></i>
+                            <span><%- prod.permis %></span>
+                            <small>Permis necesar</small>
+                        </li>
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span><%- prod.utilizare %></span>
+                            <small>Utilizare</small>
+                        </li>
+                        <li>
+                            <i class="bi bi-calendar3"></i>
+                            <span><%- dataObj.getFullYear() %></span>
+                            <small>An fabricatie</small>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="produs-detalii">
+
+                <div class="detaliu-card">
+                    <h2><i class="bi bi-file-text-fill"></i> Descriere</h2>
+                    <p><%- prod.descriere %></p>
+                </div>
+
+                <div class="detaliu-card">
+                    <h2><i class="bi bi-list-check"></i> Specificatii tehnice</h2>
+                    <table class="tabel-spec">
+                        <tbody>
+                            <tr>
+                                <th>Marca</th>
+                                <td><%- prod.marca %></td>
+                            </tr>
+                            <tr>
+                                <th>Categorie</th>
+                                <td><%- prod.categorie.replace(/_/g, ' ') %></td>
+                            </tr>
+                            <tr>
+                                <th>Utilizare</th>
+                                <td><%- prod.utilizare %></td>
+                            </tr>
+                            <tr>
+                                <th>Capacitate motor</th>
+                                <td><%- prod.capacitate_motor %> cc</td>
+                            </tr>
+                            <tr>
+                                <th>Permis necesar</th>
+                                <td><%- prod.permis %></td>
+                            </tr>
+                            <tr>
+                                <th>Data fabricatie</th>
+                                <td><time datetime="<%- prod.data_fabricatie %>"><%- formatData %></time></td>
+                            </tr>
+                            <tr>
+                                <th>Pret</th>
+                                <td class="td-pret"><%- prod.pret %> €</td>
+                            </tr>
+                            <tr>
+                                <th>Disponibilitate</th>
+                                <td class="<%- prod.in_stoc ? 'td-stoc-da' : 'td-stoc-nu' %>">
+                                    <%- prod.in_stoc ? 'În stoc' : 'Indisponibil' %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="detaliu-card">
+                    <h2><i class="bi bi-stars"></i> Dotari</h2>
+                    <div class="dotari-lista">
+                        <% for (let dotare of prod.dotari) { %>
+                            <span class="dotare-badge">
+                                <i class="bi bi-check2"></i> <%- dotare %>
+                            </span>
+                        <% } %>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <%- include('../fragmente/footer') %>
+</body>
+</html>

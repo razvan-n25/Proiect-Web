@@ -124,7 +124,7 @@
 .main-nav .meniu > li:has(ul) > a {
   pointer-events: none !important;
 }
-.main-nav .meniu > li .submenu, .main-nav .meniu > li .submenu-inner {
+.main-nav .meniu > li .submenu {
   display: block !important;
   position: relative !important;
   top: 0 !important;
@@ -140,19 +140,12 @@
   transition: transform 0.4s ease-in-out, max-height 0.4s ease-in-out;
   border: none !important;
 }
-.main-nav .meniu > li .submenu-inner {
-  background-color: #000;
-}
 .main-nav .meniu > li .submenu li a {
   padding: 0.8em 0;
   font-size: 0.9rem;
 }
 .main-nav .meniu > li .submenu li:has(ul) > a {
   pointer-events: none !important;
-}
-.main-nav .meniu > li .submenu li:hover > .submenu-inner {
-  max-height: 31.25rem;
-  transform: scaleX(1);
 }
 .main-nav .meniu > li:hover > .submenu {
   max-height: 125rem;

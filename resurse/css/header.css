@@ -16,9 +16,6 @@ body {
 
 header {
   padding-bottom: 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
 }
 header .main-title {
   margin: 0;
@@ -53,7 +50,7 @@ header .main-title .row .iconita-bord {
     color: var(--accent-color);
   }
 }
-.main-nav .meniu > li .submenu li .submenu-inner, .main-nav .meniu > li .submenu li a, .main-nav .meniu > li .submenu, .main-nav .meniu > li > a i, .main-nav .meniu > li > a span, .main-nav .meniu > li > a, .main-nav .meniu > li {
+.main-nav .meniu > li .submenu li a, .main-nav .meniu > li .submenu, .main-nav .meniu > li > a i, .main-nav .meniu > li > a span, .main-nav .meniu > li > a, .main-nav .meniu > li {
   transition: all var(--transition-speed) ease-in-out;
 }
 
@@ -153,21 +150,6 @@ header .main-title .row .iconita-bord {
 }
 .main-nav .meniu > li .submenu li a:hover::before, .main-nav .meniu > li .submenu li a:hover::after {
   height: 100%;
-}
-.main-nav .meniu > li .submenu li .submenu-inner {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  background-color: var(--bg-submeniu);
-  list-style: none;
-  padding: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  border-left: 1px solid white;
-}
-.main-nav .meniu > li .submenu li:hover > .submenu-inner {
-  transform: scaleX(1);
 }
 .main-nav .meniu > li:hover > .submenu {
   transform: scaleY(1);

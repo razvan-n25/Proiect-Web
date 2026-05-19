@@ -1,64 +1,144 @@
 @use "../../node_modules/bootstrap/scss/bootstrap" with (
     $font-family-base: ("Oswald", sans-serif),
-    $h1-font-size: 2.2rem, 
+    $h1-font-size: 2.2rem,
     $h2-font-size: 1.8rem,
     $h3-font-size: 1.5rem,
-    
+
+    $btn-border-radius: 0.6rem,
+    $btn-border-width: 2px,
+
     $grid-breakpoints: (
         xs: 0,
         sm: 576px,
-        md: 800px, 
+        md: 800px,
         lg: 1150px,
         xl: 1200px,
         xxl: 1400px
-    )
+    ),
+
+    $form-range-thumb-width: 1.5rem,
+    $form-range-thumb-height: 1.5rem,
+    $form-range-thumb-bg: #ff4500,
+    $form-range-thumb-active-bg: #cc3700,
+    $form-range-track-bg: #555555
 );
+
+.btn-primary {
+    --bs-btn-bg: #ff4500;
+    --bs-btn-border-color: #ff4500;
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-bg: #cc3700;
+    --bs-btn-hover-border-color: #cc3700;
+    --bs-btn-active-bg: #aa2e00;
+    --bs-btn-active-border-color: #aa2e00;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #ff4500;
+    --bs-btn-border-color: #ff4500;
+    --bs-btn-hover-bg: #ff4500;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-border-color: #ff4500;
+    --bs-btn-active-bg: #cc3700;
+    --bs-btn-active-border-color: #cc3700;
+}
+
+.btn-secondary {
+    --bs-btn-bg: #3a3a3a;
+    --bs-btn-border-color: #555555;
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-bg: #4a4a4a;
+    --bs-btn-hover-border-color: #666666;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: #aaaaaa;
+    --bs-btn-border-color: #555555;
+    --bs-btn-hover-bg: #3a3a3a;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-border-color: #666666;
+}
 
 .tema-sport {
     --bs-body-bg: #0f3460;
     --bs-body-color: #ffffff;
-    --bs-primary: #534141; 
-    --bs-border-radius: 25px; 
+    --bs-primary: #c0392b;
+    --bs-border-radius: 25px;
 
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
 
-    h1, h2, h3, h4, h5, h6 { 
-        --bs-heading-color: #ffffff; 
+    h1, h2, h3, h4, h5, h6 {
+        --bs-heading-color: #ffffff;
     }
-    
-    section { 
+
+    section {
         border-radius: var(--bs-border-radius) !important;
     }
 
     .btn-primary {
-        --bs-btn-bg: var(--bs-primary);
-        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-bg: #c0392b;
+        --bs-btn-border-color: #c0392b;
         --bs-btn-color: #ffffff;
+        --bs-btn-hover-bg: #a93226;
+        --bs-btn-hover-border-color: #a93226;
+    }
+
+    .btn-outline-primary {
+        --bs-btn-color: #c0392b;
+        --bs-btn-border-color: #c0392b;
+        --bs-btn-hover-bg: #c0392b;
+        --bs-btn-hover-color: #ffffff;
+    }
+
+    .btn-secondary {
+        --bs-btn-bg: #1a5276;
+        --bs-btn-border-color: #1a5276;
+        --bs-btn-color: #ffffff;
+        --bs-btn-hover-bg: #154360;
+        --bs-btn-hover-border-color: #154360;
     }
 }
 
 .tema-luxe {
     --bs-body-bg: #2d1b4e;
     --bs-body-color: #fafafa;
-    --bs-primary: #d4af37; 
+    --bs-primary: #d4af37;
     --bs-border-radius: 15px;
 
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
 
-    h1, h2, h3, h4, h5, h6 { 
-        --bs-heading-color: #f5e6d3; 
+    h1, h2, h3, h4, h5, h6 {
+        --bs-heading-color: #f5e6d3;
     }
 
-    section { 
+    section {
         border-radius: var(--bs-border-radius) !important;
     }
 
     .btn-primary {
-        --bs-btn-bg: var(--bs-primary);
-        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-bg: #d4af37;
+        --bs-btn-border-color: #d4af37;
         --bs-btn-color: #2d1b4e;
+        --bs-btn-hover-bg: #b8962e;
+        --bs-btn-hover-border-color: #b8962e;
+        --bs-btn-active-bg: #9d7e26;
+    }
+
+    .btn-outline-primary {
+        --bs-btn-color: #d4af37;
+        --bs-btn-border-color: #d4af37;
+        --bs-btn-hover-bg: #d4af37;
+        --bs-btn-hover-color: #2d1b4e;
+    }
+
+    .btn-secondary {
+        --bs-btn-bg: #4a2d7a;
+        --bs-btn-border-color: #5d3a99;
+        --bs-btn-color: #f5e6d3;
+        --bs-btn-hover-bg: #5d3a99;
+        --bs-btn-hover-border-color: #6e45b0;
     }
 }
 
@@ -87,9 +167,6 @@ body.tema-luxe { @extend .tema-luxe; }
     background-color: #969694;
 }
 
-*, *::before, *::after {
-    box-sizing: content-box;
-}
 
 .main-title .row {
     margin-left: 0;

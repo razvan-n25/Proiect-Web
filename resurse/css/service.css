@@ -27,7 +27,7 @@ video {
     
     border: 2px solid var(--culoare2);
 
-    filter: grayscale(0%),brightness(200%); 
+    filter: grayscale(0%); 
     transition: all 1.2s linear; 
 }
 .duotone-box::before,

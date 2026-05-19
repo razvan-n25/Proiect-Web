@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>MotoRevit - Produse</title>
+    <meta name="description" content="MotoRevit - motociclete si scutere noi sau SH, modele KTM, Honda, Yamaha, Kawasaki, Vespa si BMW, cu specificatii complete si preturi actualizate.">
+    <meta name="keywords" content="MotoRevit, motociclete, scutere, motociclete noi, motociclete SH, scutere noi, scutere SH, KTM, Honda, Yamaha, Kawasaki, Vespa, BMW, KTM Super Duke 1390 R, Honda Africa Twin CRF1100L, Yamaha MT-09, Kawasaki Ninja H2 SX, BMW R 1300 GS, Vespa Primavera 125, Yamaha TMAX Tech MAX, Honda Forza 350">
+    <link rel="stylesheet" href="/resurse/css/produse.css">
+    <%- include('../fragmente/head') %>
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+</head>
+
+<body>
+    <%- include('../fragmente/header') %>
+
+    <main>
+        <section id="zona-filtre">
+            <h2>Filtrare Produse</h2>
+
+            <div class="row g-3" id="grid-filtre">
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <label class="form-label d-block"> Nume model:
+                        <input type="text" id="inp-nume" class="form-control" placeholder="Ex: Africa Twin">
+                    </label>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <label class="form-label d-block">Capacitate motor:
+                        <span>49 cc</span>
+                        <input type="range" id="inp-capacitate" class="form-range" min="49" max="1500" value="49">
+                        <span>1500 cc</span>
+                        <span id="afis-range">(49)</span>
+                    </label>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <label class="form-label d-block"> Cauta marca:
+                        <input list="dl-marci" id="inp-datalist" class="form-control">
+                        <datalist id="dl-marci">
+                            <% for (let marci of locals.marci) { %>
+                                <option value="<%- marci.unnest %>"></option>
+                            <% } %>
+                        </datalist>
+                    </label>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <span class="form-label d-block">Categorie utilizare:</span>
+                    <div id="gr-radio-utilizare" class="d-flex flex-wrap gap-1">
+                        <input type="radio" class="btn-check" id="rad-toate" name="rad-utilizare" value="toate" checked autocomplete="off">
+                        <label class="btn btn-outline-primary" for="rad-toate">toate</label>
+                        <% for (let opt of locals.optiuni) { %>
+                            <input type="radio" class="btn-check" name="rad-utilizare" id="rad-<%- opt.unnest %>" value="<%- opt.unnest %>" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="rad-<%- opt.unnest %>"><%- opt.unnest %></label>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <label class="form-label d-block">Doar in stoc:</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="inp-stoc">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="inp-textarea" placeholder=" "></textarea>
+                        <label for="inp-textarea">Filtru descriere (+/-) | +abs -uzat</label>
+                        <div class="invalid-feedback">Format invalid. Fiecare termen trebuie să înceapă cu + sau - și să fie separat prin spațiu. Singurele caractere permise sunt literele (a-z/A-Z), semnele + și -, și spațiile.</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    <label class="form-label d-block"> Categorie Permis:
+                        <select id="sel-categorie-permis" class="form-select">
+                            <option id="opt-oricare" selected value="oricare">oricare</option>
+                            <% for (let permis of locals.permise) { %>
+                                <option value="<%- permis.unnest %>"><%- permis.unnest %></option>
+                            <% } %>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    <label class="form-label d-block"> Intervale Pret (Ctrl+Click):
+                        <select id="sel-multiplu-pret" class="form-select" multiple size="4">
+                            <option value="0-5000">0 - 5.000 €</option>
+                            <option value="5000-10000">5.000 - 10.000 €</option>
+                            <option value="10000-20000">10.000 - 20.000 €</option>
+                            <option value="20000-100000">Peste 20.000 €</option>
+                        </select>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <button id="filtreaza" class="btn btn-primary">
+                    <i class="bi bi-funnel-fill"></i>
+                    <span class="d-none d-md-inline ms-1">Filtreaza</span>
+                </button>
+                <button id="resetare" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                    <span class="d-none d-md-inline ms-1">Resetare</span>
+                </button>
+                <button id="sort-asc" class="btn btn-secondary">
+                    <i class="bi bi-sort-up"></i>
+                    <span class="d-none d-md-inline ms-1">Sortare Ascendent</span>
+                </button>
+                <button id="sort-desc" class="btn btn-secondary">
+                    <i class="bi bi-sort-down"></i>
+                    <span class="d-none d-md-inline ms-1">Sortare Descendent</span>
+                </button>
+                <button id="calcul" class="btn btn-outline-primary">
+                    <i class="bi bi-calculator"></i>
+                    <span class="d-none d-md-inline ms-1">Pret Maxim</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="produse">
+            <h2>Rezultate</h2>
+            <div class="grid-produse">
+                <% for (let prod of locals.produse) { 
+                    const zile = ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
+                    const luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                    let dataObj = new Date(prod.data_fabricatie);
+                    let formatData = `${zile[dataObj.getDay()]}, ${dataObj.getDate()}-${luni[dataObj.getMonth()]}-${dataObj.getFullYear()}`;
+                %>
+                <article class="produs <%- prod.categorie %>" id="articol_<%- prod.id %>">
+                    <h3 class="nume">Nume: <a href="/produs/<%- prod.id %>"><span class="val-nume"><%- prod.nume %></span></a></h3>
+
+                    <p>Categorie: <span class="val-utilizare"><%- prod.utilizare %></span></p>
+
+                    <div class="info-principala">
+                        <p>Descriere: <span class="val-descriere"><%- prod.descriere %></span></p>
+                        <figure>
+                            <img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]">
+                        </figure>
+                    </div>
+
+                    <ul>
+                        <li>Pret: <span class="val-pret"><%- prod.pret %></span> €</li>
+                        <li>Marca: <span class="val-marca"><%- prod.marca %></span></li>
+                        <li>Dotari: <span class="val-dotari"><%- prod.dotari %></span></li>
+                        <li>Data Fabricatie: 
+                            <time datetime="<%- prod.data_fabricatie %>"><%- formatData %></time>
+                        </li>
+                        <li>Stoc: <span class="val-stoc"><%- prod.in_stoc ? 'Da' : 'Nu' %></span></li>
+                        <li style="display:none">Capacitate: <span class="val-capacitate"><%- prod.capacitate_motor %></span> cc</li>
+                        <li style="display: none">Permis: <span class="val-categorie-permis"><%- prod.permis %></span></li>
+                    </ul>
+                </article>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../fragmente/footer') %>
+</body>
+</html>

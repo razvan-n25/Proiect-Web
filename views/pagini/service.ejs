@@ -15,54 +15,54 @@
     <div id="watermark-print">Razvan Nica</div>
     <%- include("../fragmente/header.ejs") %>
     <main>
-    <div class="stiri-container">
-        <div class="stiri-text">
-            REDUCERE 20% la efectuarea ITP in luna aceasta! Programeaza-te acum si profita de oferta noastra speciala pentru siguranta masinii tale.
+        <div class="stiri-container">
+            <div class="stiri-text">
+                REDUCERE 20% la efectuarea ITP in luna aceasta! Programeaza-te acum si profita de oferta noastra speciala pentru siguranta motocicletei tale.
+            </div>
         </div>
-    </div>
-    <section id="duotone-galerie">
-            <div class="duotone-box">
-                <div class="duotone-content">
-                    <h1 class="display-4 fw-bold">Service Moto Autorizat în București</h1>
-                    <p class="lead">Reparații, întreținere, diagnoză ECU și service oficial pentru motocicleta ta.</p>
-                    
-                    <div class="duotone-buttons mt-4">
-                        <a href="tel:0761320240" class="btn btn-danger btn-lg me-3">
-                            <i class="bi bi-telephone-fill"></i> Sună: 0722.000.000
-                        </a>
-                        <a href="https://wa.me/40722000000" class="btn btn-dark btn-md">
-                            Scrie pe WhatsApp 
-                        </a>
+        <section id="duotone-galerie">
+                <div class="duotone-box">
+                    <div class="duotone-content">
+                        <h1 class="display-4 fw-bold">Service Moto Autorizat în București</h1>
+                        <p class="lead">Reparații, întreținere, diagnoză ECU și service oficial pentru motocicleta ta.</p>
+                        
+                        <div class="duotone-buttons mt-4">
+                            <a href="tel:0761320240" class="btn btn-danger btn-lg me-3">
+                                <i class="bi bi-telephone-fill"></i> Sună: 0722.000.000
+                            </a>
+                            <a href="https://wa.me/40722000000" class="btn btn-dark btn-md">
+                                Scrie pe WhatsApp 
+                            </a>
+                        </div>
                     </div>
                 </div>
+        </section>
+        <section id="video-vtt">
+            <div class="reflexie-container">
+                <h2 class="text-original">Tur Virtual al Service-ului nostru</h2>
+                <h2 class="text-reflectat">Tur Virtual al Service-ului nostru</h2>
             </div>
-    </section>
-    <section id="video-vtt">
-        <div class="reflexie-container">
-            <h2 class="text-original">Tur Virtual al Service-ului nostru</h2>
-            <h2 class="text-reflectat">Tur Virtual al Service-ului nostru</h2>
-        </div>
-        <video controls 
-               poster="/resurse/imagini/service.png" 
-               preload="metadata" >
-            
-            <source src="/resurse/video/videoclip.mp4" type="video/mp4">
-            <source src="/resurse/video/videoclip.ogv" type="video/ogv">
+            <video controls 
+                poster="/resurse/imagini/service.png" 
+                preload="metadata" >
+                
+                <source src="/resurse/video/videoclip.mp4" type="video/mp4">
+                <source src="/resurse/video/videoclip.ogv" type="video/ogv">
 
-            <track default 
-                   src="/resurse/video/tracks/mesaje_ro.vtt" 
-                   kind="subtitles" 
-                   srclang="ro" 
-                   label="Română">
-            
-            <track src="/resurse/video/tracks/mesaje_en.vtt" 
-                   kind="subtitles" 
-                   srclang="en" 
-                   label="English">
-        </video>
-    </section>
-    <%- include("../fragmente/galerie.ejs") %>
-</main>
+                <track default 
+                    src="/resurse/video/tracks/mesaje_ro.vtt" 
+                    kind="subtitles" 
+                    srclang="ro" 
+                    label="Română">
+                
+                <track src="/resurse/video/tracks/mesaje_en.vtt" 
+                    kind="subtitles" 
+                    srclang="en" 
+                    label="English">
+            </video> 
+        </section>
+        <%- include("../fragmente/galerie.ejs") %>
+    </main>
     <%-include("../fragmente/footer.ejs") %>
 </body>
 

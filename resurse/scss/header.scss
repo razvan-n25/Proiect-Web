@@ -14,9 +14,6 @@ body {
 }
 header {
     padding-bottom: 2rem;
-    position:sticky;
-    top: 0;
-    z-index: 1001;
     .main-title {
         margin: 0;
         background-color: var(--bg);
@@ -155,24 +152,6 @@ header {
                         }
                     }
 
-                   
-                    .submenu-inner {
-                        position: absolute;
-                        top: 0;
-                        left: 100%; 
-                        width: 100%;
-                        background-color: var(--bg-submeniu);
-                        list-style: none;
-                        padding: 0;
-                        transform: scaleX(0);
-                        transform-origin: left;
-                        @extend %transition-base;
-                        border-left: 1px solid white;
-                    }
-
-                    &:hover > .submenu-inner {
-                        transform: scaleX(1);
-                    }
                 }
             }
 

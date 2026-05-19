@@ -3,6 +3,8 @@ const path = require("path");
 const fs=require("fs");
 const sass = require("sass");
 const sharp = require("sharp");
+const pg=require("pg");
+const ejs = require("ejs");
 app = express();
 app.set("view engine", "ejs");
 
@@ -11,12 +13,42 @@ obGlobal={
     obImagini:null,
     folderScss:path.join(__dirname,"resurse/scss"),
     folderCss:path.join(__dirname,"resurse/css"),
-    folderBackup:path.join(__dirname,"backup")
+    folderBackup:path.join(__dirname,"backup"),
+    optiuniMeniu: []
 }
 
 console.log("Folder index.js", __dirname);
 console.log("Folder curent (de lucru)", process.cwd());
 console.log("Cale fisier", __filename);
+client =new pg.Client({
+    database:"cti_2026",
+    user:"razvansql",
+    password:"razvansql",
+    host:"localhost",
+    port:5432
+})
+client.connect();
+client.query("select * from produse", function(err, rez){
+    if (err){
+        console.log("Eroare la interogare", err);
+    }
+    else{
+        console.log("Rezultat interogare", rez.rows);
+    }
+});
+
+app.use(function(req, res, next){
+    client.query("select * from unnest(enum_range(null::categ_moto))", function(err, rezCategorii){
+        if (err){
+            console.log("Eroare obtinere categorii", err);
+            return next();
+        }
+
+        obGlobal.optiuniMeniu = rezCategorii.rows;
+        res.locals.optiuniMeniu = obGlobal.optiuniMeniu;
+        next();
+    });
+});
 
 let vect_foldere=[ "temp", "logs", "backup", "fisiere_uploadate" ]
 for (let folder of vect_foldere){
@@ -42,6 +74,66 @@ app.use("/dist",express.static(path.join(__dirname,"node_modules/bootstrap/dist"
 
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname,"resurse/imagini/favicon/favicon.ico"))
+});
+
+app.get("/produse", function(req, res){
+    let clauzaWhere = "";
+    if (req.query.tip)
+        clauzaWhere = `where categorie='${req.query.tip}'`;
+
+    client.query(`select * from produse ${clauzaWhere}`, function(err, rezProduse){
+        if (err){
+            console.log("Eroare produse", err);
+            afisareEroare(res, 2);
+        }
+        else {
+            client.query("select unnest(enum_range(null::tip_utilizare))", function(err, rezOptiuni){
+                if (err){
+                    afisareEroare(res, 2);
+                }
+                else {
+                    client.query("select unnest(enum_range(null::marca_moto))", function(err, rezMarci){
+                        if (err){
+                            afisareEroare(res, 2);
+                        }
+                        else {
+                            client.query("select unnest(enum_range(null::tip_permis))", function(err, rezPermise){
+                                if (err){
+                                    afisareEroare(res, 2);
+                                }
+                                else {
+                                    res.render("pagini/produse", {
+                                        produse: rezProduse.rows,
+                                        optiuni: rezOptiuni.rows, 
+                                        marci: rezMarci.rows,     
+                                        permise: rezPermise.rows   
+                                    });
+                                }
+                            }); 
+                        }
+                    }); 
+                }
+            }); 
+        }
+    }); 
+});
+
+app.get ("/produs/:id", function(req, res){
+    client.query(`select * from produse where id=${req.params.id}`, function(err, rez){
+        if (err){
+            console.log("Eroare la interogare", err);
+            afisareEroare(res,2);
+        }
+        else{
+            if(rez.rowCount==0){
+                afisareEroare(res,404,"Produs inexistent","Produsul cu ID-ul specificat nu a fost găsit.");
+                // return;
+            }
+            res.render("pagini/produs",{
+                prod: rez.rows[0]
+            });
+        }
+});
 });
 
 function verificareEroriInitiala() {

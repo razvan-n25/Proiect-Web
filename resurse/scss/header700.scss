@@ -126,7 +126,7 @@ $t: 300ms;
                     
                 }
             
-            .submenu, .submenu-inner {
+            .submenu{
                 display: block !important;
                 position: relative !important;
                 top: 0 !important;
@@ -143,9 +143,6 @@ $t: 300ms;
                 border: none !important;
             }
 
-            .submenu-inner {
-                background-color: #000;
-            }
 
             .submenu li {
                 a {
@@ -155,10 +152,6 @@ $t: 300ms;
                 &:has(ul) > a {
                     pointer-events: none!important;
                     
-                }
-                &:hover > .submenu-inner {
-                    max-height: 31.25rem;
-                    transform: scaleX(1);
                 }
             }
 

@@ -1,0 +1,225 @@
+.input-eroare {
+  box-shadow: 0 0 8px 2px red !important;
+  border-color: red !important;
+  animation: tremurat 0.3s ease-in-out;
+}
+
+@keyframes tremurat {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+main {
+  padding: 2rem 3rem;
+  background-color: var(--culoare-fundal-sectiuni);
+  min-height: 100vh;
+  border-radius: 2rem;
+  color: var(--text-color);
+}
+
+#zona-filtre {
+  background: linear-gradient(145deg, #1f1f1f, #141414);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+#zona-filtre h2 {
+  color: var(--accent-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+#produse h2 {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+#produse h2::before, #produse h2::after {
+  content: "";
+  display: inline-block;
+  width: 3rem;
+  height: 2px;
+  background-color: var(--accent-color);
+  vertical-align: middle;
+  margin: 0 1rem;
+}
+#produse .grid-produse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+}
+#produse .produs {
+  background: linear-gradient(145deg, #1e1e1e, #161616);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: var(--text-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-speed) ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+#produse .produs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+#produse .produs:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 30px rgba(255, 69, 0, 0.25);
+}
+#produse .produs:hover::before {
+  transform: scaleY(1);
+}
+#produse .produs .nume {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+#produse .produs .nume a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease-in-out;
+}
+#produse .produs .nume a:hover {
+  text-decoration: underline;
+  color: rgb(255, 106.2, 51);
+}
+#produse .produs > p {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+#produse .produs .info-principala {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.6rem;
+}
+#produse .produs .info-principala p {
+  margin: 0;
+  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+#produse .produs .info-principala figure {
+  margin: 0;
+  flex-shrink: 0;
+}
+#produse .produs .info-principala figure img {
+  width: 230px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 69, 0, 0.3);
+  transition: transform var(--transition-speed) ease-in-out;
+}
+#produse .produs .info-principala figure img:hover {
+  transform: scale(1.05);
+}
+#produse .produs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#produse .produs ul li {
+  padding: 0.5rem 0.3rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+#produse .produs ul li:last-child {
+  border-bottom: none;
+}
+#produse .produs ul li .val-pret {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+#produse .produs ul li .val-stoc {
+  font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+  main {
+    padding: 1.5rem 2rem;
+  }
+  #produse .grid-produse {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+  }
+  #produse .produs .info-principala figure img {
+    width: 180px;
+    height: 130px;
+  }
+}
+@media (max-width: 700px) {
+  main {
+    padding: 1rem;
+  }
+  #zona-filtre {
+    padding: 1rem;
+  }
+  #zona-filtre h2 {
+    font-size: 1.4rem;
+  }
+  #produse h2 {
+    font-size: 1.5rem;
+  }
+  #produse h2::before, #produse h2::after {
+    width: 1.5rem;
+    margin: 0 0.5rem;
+  }
+  #produse .produs {
+    padding: 1rem;
+  }
+  #produse .produs .nume {
+    font-size: 1.1rem;
+  }
+  #produse .produs .info-principala {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #produse .produs .info-principala figure {
+    align-self: center;
+  }
+  #produse .produs .info-principala figure img {
+    width: 100%;
+    max-width: 280px;
+    height: 180px;
+  }
+}

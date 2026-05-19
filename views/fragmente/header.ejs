@@ -1,3 +1,4 @@
+<script src="/resurse/js/tema.js"></script>
 <header id="top">
         <div class="main-title">
             <div class="row">
@@ -33,25 +34,19 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/catalog">
-                        <div class="text-icon">TOATE PRODUSELE</div>
+                    <a href="/produse">
+                        <div class="text-icon">PRODUSE</div>
                         <div class="imag-icon">
                             <span class="fa-solid fa-motorcycle fa-bounce"></span>
                         </div>
                     </a>
                     <ul class="submenu">
-                        <li><a href="/motociclete">Motociclete</a>
-                            <ul class="submenu-inner">
-                                <li><a href="#">Noi</a></li>
-                                <li><a href="#">Second-Hand (SH)</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/scutere">Scutere</a>
-                            <ul class="submenu-inner">
-                                <li><a href="#">Noi</a></li>
-                                <li><a href="#">Second-Hand (SH)</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="/produse">Toate</a></li>
+                        <% if (locals.optiuniMeniu && locals.optiuniMeniu.length) { %>
+                            <% for (let c of locals.optiuniMeniu) { %>
+                                <li><a href="/produse?tip=<%- c.unnest %>"><%- c.unnest.replace(/_/g, ' ') %></a></li>
+                            <% } %>
+                        <% } %>
                     </ul>
                 </li>
                 <li>
@@ -80,4 +75,8 @@
                 </li>
             </ul>
         </nav>
+        <button id="schimba_tema" title="Schimbă tema">
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+        </button>
     </header>
